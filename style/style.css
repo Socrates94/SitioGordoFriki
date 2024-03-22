@@ -1,0 +1,641 @@
+:root {
+  --blanco: #ffffff;
+  --negro: #000000;
+  --fuente: 'krub';
+  --fuente2: 'DM Serif Display';
+  --fuenteTitulo: 'Roboto Slab';
+}
+
+/* globales */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  scroll-snap-type: y mandatory;
+}
+
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+* {
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  font-size: 16px;
+  /* esto es para convertir 1rem a 10px*/
+  font-family: var(--fuente), Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to top, rgb(190, 189, 189) 0%, var(--blanco) 100%);
+}
+
+/* titulos y tipografia*/
+h1 {
+  font-size: 3.8rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 1.8rem;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+.sombra {
+  -webkit-box-shadow: 0px 5px 15px 0px rgba(128, 128, 128, 0.45);
+  -moz-box-shadow: 0px 5px 15px 0px rgba(128, 128, 128, 0.45);
+  box-shadow: 0px 5px 15px 0px rgba(128, 128, 128, 0.45);
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+
+.contenedor {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* estilo para los botones */
+.boton {
+  background-color: var(--negro);
+  color: var(--blanco);
+  margin-top: 1rem;
+  padding: 1rem 3rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  width: 80%;
+  text-align: center;
+  border: none;
+}
+
+.boton:hover {
+  background-color: var(--blanco);
+  color: var(--negro);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .boton {
+    width: auto;
+  }
+}
+
+/* utilidades */
+.w-100 {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .w-100 {
+    width: auto;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.alinear-derecha {
+  justify-content: flex-end;
+}
+
+/* barra de navegaccion */
+header {
+  width: 100%;
+  height: 8rem;
+  background-color: var(--negro);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+}
+
+.menu {
+  color: var(--blanco);
+  text-align: center;
+}
+
+.logo {
+  color: var(--blanco);
+  font-family: var(--fuenteTitulo);
+  font-weight: bold;
+  font-size: 2rem;
+  margin: 1.3rem;
+}
+
+.logo:hover {
+  transform: scale(1.2);
+}
+
+
+.bars {
+  display: none;
+}
+
+.nav-bar ul {
+  display: flex;
+}
+
+.nav-bar ul li a {
+  text-decoration: none;
+  display: block;
+  color: var(--blanco);
+  font-size: 2rem;
+  padding: 1rem 2.5rem;
+  border-radius: 1.5rem;
+  transition: 0.2s;
+  margin: 0 0.5rem;
+}
+
+.nav-bar ul li a:hover {
+  color: var(--negro);
+  background-color: var(--blanco);
+  transform: scale(1.3);
+}
+
+.nav-bar ul li a.active {
+  color: var(--negro);
+  background-color: var(--blanco);
+}
+
+
+/* para celulares
+@media (min-width: 480px) {
+    
+}
+
+para tabletas 
+@media (min-width: 768px) {
+    
+}
+
+para laptop
+@media (min-width: 1140px) {
+    
+}
+
+para pantallas
+@media (min-width: 1400px) {
+    
+} */
+
+
+
+/* max-width <= entra a la condicion si entra de bajo de los 900px */
+/* min-width >= entra cunado pasa de los 900px */
+@media(max-width:900px) {
+
+  header {
+    padding: 0rem 3rem;
+  }
+
+  .bars {
+    display: block;
+    cursor: pointer;
+  }
+
+  .bars .line {
+    width: 3rem;
+    height: 0.3rem;
+    background-color: var(--blanco);
+    margin: 0.6rem 0.5rem;
+  }
+
+  .bars .line:hover {
+    background-color: rgb(109, 102, 102);
+    transform: scale(1.5);
+  }
+
+  .nav-bar {
+    height: 0rem;
+    position: absolute;
+    top: 8rem;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    background-color: var(--negro);
+    transition: 0.5s;
+    overflow: hidden;
+  }
+
+  .nav-bar.active {
+    height: 40rem;
+  }
+
+  .nav-bar ul {
+    display: block;
+    text-align: center;
+    width: fit-content;
+    margin: 8rem auto 0 auto;
+    transition: 0.5s;
+    opacity: 0;
+  }
+
+  .nav-bar.active ul {
+    opacity: 1;
+  }
+
+  .nav-bar ul li a {
+    margin-bottom: 2rem;
+
+  }
+
+  .nav-bar ul li a:hover {
+    transform: scale(1.5);
+  }
+
+}
+
+/* fin de la barra de navegacion */
+
+
+/* estilos al banner */
+.hero {
+  animation: banner 10s infinite linear alternate;
+  background-size: cover;
+  height: 65rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+
+}
+
+.contenido-hero {
+  background-color: rgb(0 0 0 / 5%);
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contenido-hero h2,
+.contenido-hero p {
+  font-family: var(--fuente);
+  color: #ffffff;
+}
+
+@keyframes banner {
+
+  0%,
+  17% {
+    background-image: url(../img/banner1.jpeg);
+    background-repeat: no-repeat;
+  }
+
+  18%,
+  35% {
+    background-image: url(../img/banner2.jpeg);
+    background-repeat: no-repeat;
+  }
+
+  36%,
+  53% {
+    background-image: url(../img/banner3.jpeg);
+    background-repeat: no-repeat;
+  }
+
+  54%,
+  71% {
+    background-image: url(../img/banner4.jpeg);
+    background-repeat: no-repeat;
+  }
+
+  72%,
+  89% {
+    background-image: url(../img/banner5.jpeg);
+    background-repeat: no-repeat;
+  }
+
+  90%,
+  100% {
+    background-image: url(../img/banner6.jpeg);
+    background-repeat: no-repeat;
+  }
+}
+
+/* servicios */
+@media (min-width: 768px) {
+  .servicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 2rem;
+  }
+}
+
+.servicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.servicio h3 {
+  font-weight: bold;
+}
+
+.servicio p {
+  line-height: 2rem;
+  text-align: center;
+}
+
+.servicio .iconos {
+  height: 15rem;
+  width: 15rem;
+  background-color: orange;
+  border-radius: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* estilo formulario */
+.formulario {
+  background-color: gray;
+  width: min(60rem, 100%);
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.formulario fieldset {
+  border: none;
+}
+
+.formulario legend {
+  text-align: center;
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  color: #000000;
+}
+
+@media (min-width: 768px) {
+  .contenedor-campos {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto auto 20rem;
+    column-gap: 2rem;
+  }
+
+  .campo:nth-child(3),
+  .campo:nth-child(4) {
+    grid-column: 1 / 3;
+  }
+}
+
+.campo {
+  margin-bottom: 1rem;
+}
+
+.campo label {
+  color: var(--blanco);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.campo textarea {
+  height: 15rem;
+}
+
+.input-text {
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+}
+
+/* footer */
+.pie-pagina {
+  width: 100%;
+  background-color: #0a141d;
+}
+
+.pie-pagina .grupo-1 {
+  width: 100%;
+  max-width: 120rem;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 5rem;
+  padding: 4rem 0rem;
+}
+
+.pie-pagina .grupo-1 .box h1 {
+  color: var(--blanco);
+  font-weight: bold;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+  color: var(--blanco);
+  font-weight: bold;
+}
+
+.pie-pagina .grupo-1 .box p {
+  color: #efefef;
+  text-align: center;
+  line-height: 2rem;
+  margin-bottom: 1rem;
+}
+
+.pie-pagina .grupo-1 .box .red-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pie-pagina .grupo-2 {
+  background-color: 0a1a2a;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  color: var(--blanco);
+}
+
+.pie-pagina .grupo-2 small {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .pie-pagina .grupo-1 {
+    width: 80%;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 3rem;
+    padding: 3rem 0rem;
+  }
+}
+
+
+/* boton de whats */
+
+.btn-wsp {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  position: fixed;
+  width: 5rem;
+  height: 5rem;
+  line-height: 6rem;
+  bottom: 2.5rem;
+  right: 2.5rem;
+  background: #25f973;
+  color: #FFF;
+  border-radius: 5rem;
+  text-align: center;
+  font-size: 2rem;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+  transition: all 300ms ease;
+}
+
+.btn-wsp:hover {
+  text-decoration: none;
+  color: #25f973;
+  background: var(--blanco);
+}
+
+@media only screen and (min-width:320px) and (max-width:768px) {
+  .btn-wsp {
+    width: 63px;
+    height: 63px;
+    line-height: 66px;
+  }
+}
+
+
+/* Inicio loader */
+
+.hidden {
+  overflow: hidden;
+}
+
+.centrado {
+  height: 100vh;
+  background-color: var(--negro);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 8rem;
+  height: 8rem;
+}
+
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 4rem 4rem;
+}
+
+.lds-roller div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: #cef;
+  margin: -0.4rem 0 0 -0.4rem;
+}
+
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+  top: 6.3rem;
+  left: 6.3rem;
+}
+
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+  top: 6.8rem;
+  left: 5.6rem;
+}
+
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+  top: 7.1rem;
+  left: 4.8rem;
+}
+
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+  top: 7.2rem;
+  left: 4rem;
+}
+
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+  top: 7.1rem;
+  left: 3.2rem;
+}
+
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+  top: 6.8rem;
+  left: 2.4rem;
+}
+
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+  top: 6.3rem;
+  left: 1.7rem;
+}
+
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+  top: 5.6rem;
+  left: 1.2rem;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* fin loder */
