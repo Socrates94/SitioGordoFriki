@@ -11,4 +11,3 @@ window.onload = function(){
     $('body').removeClass('hidden');
 }
 
-alert('homla soy cheems')
