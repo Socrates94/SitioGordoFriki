@@ -10,3 +10,5 @@ window.onload = function(){
     $('#spin').fadeOut();
     $('body').removeClass('hidden');
 }
+
+alert('homla');
