@@ -12,3 +12,7 @@ window.onload = function(){
 }
 
 alert('homla');
+
+for (let i = 0; i < 10; i++) {
+    console.log(i);
+}
