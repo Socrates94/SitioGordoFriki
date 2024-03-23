@@ -11,8 +11,3 @@ window.onload = function(){
     $('body').removeClass('hidden');
 }
 
-alert('homla');
-
-for (let i = 0; i < 10; i++) {
-    console.log(i);
-}
