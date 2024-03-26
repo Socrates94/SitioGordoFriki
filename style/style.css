@@ -141,11 +141,6 @@ header {
   margin: 1.3rem;
 }
 
-.logo:hover {
-  transform: scale(1.2);
-}
-
-
 .bars {
   display: none;
   margin-bottom: 2rem;
