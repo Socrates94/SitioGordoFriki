@@ -496,11 +496,15 @@ para pantallas
 }
 
 /* inforamcion del servicio */
-.servicio{
+.servicio__pagina{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin: 1.5rem;
+}
+
+.servicio__imagen{
+  
 }
 
 .servicio__contenido p{
