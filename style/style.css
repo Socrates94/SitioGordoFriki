@@ -497,9 +497,6 @@ para pantallas
 
 /* inforamcion del servicio */
 
-.servicio__pagina{
-  grid-template-columns: repeat(1, 1fr);
-}
 
 @media (min-width: 768px) {
   .servicio__pagina{
@@ -511,11 +508,11 @@ para pantallas
 }
 
 .servicio__imagen{
-  max-width: 100%;
+  margin: 1.5rem;
 }
 
 .servicio__contenido{
-  margin: 2rem;
+  
 }
 
 .servicio__contenido p{
@@ -524,12 +521,25 @@ para pantallas
 }
 
 .formulario__servicio{
+  background-color: rgb(160, 160, 161);
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  padding: 1.5rem;
+  margin: 2rem;
 }
 
-.boton__servicio{
+.formulario__campo{
+  background-color: var(--blanco);
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 2rem;
+  font-family: var(--fuente);
+  padding: 1rem;
+}
+
+
+.formulario__boton{
   grid-column: 1 / 3;
 }
 
