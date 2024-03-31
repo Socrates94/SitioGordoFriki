@@ -496,20 +496,41 @@ para pantallas
 }
 
 /* inforamcion del servicio */
+
 .servicio__pagina{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-  margin: 1.5rem;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+  .servicio__pagina{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin: 1.5rem;
+  }    
 }
 
 .servicio__imagen{
-  
+  max-width: 100%;
+}
+
+.servicio__contenido{
+  margin: 2rem;
 }
 
 .servicio__contenido p{
   text-align: center;
   inset-inline: 1.5rem;
+}
+
+.formulario__servicio{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.boton__servicio{
+  grid-column: 1 / 3;
 }
 
 
